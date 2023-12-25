@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "5d92f56f-b19b-4df0-9c4b-174418cba7af",
+		"name": "CheapNFT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31976105"
+	},
+	"item": [
+		{
+			"name": "Auction",
+			"item": [
+				{
+					"name": "Publish Auction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "private_key",
+									"value": "",
+									"description": "Private Key of Owner of NFT",
+									"type": "text"
+								},
+								{
+									"key": "nft_id",
+									"value": "",
+									"description": "NFT ID",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/publish_auction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"publish_auction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Offer Auction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID generate on Publish Auction, query on http://localhost:8000/api/bids/",
+									"type": "text"
+								},
+								{
+									"key": "private_key",
+									"value": "",
+									"description": "Private Key of bidder",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Price offered (wei)",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/offer_auction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"offer_auction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sell Fix Price",
+			"item": [
+				{
+					"name": "Publish Offer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nft_id",
+									"value": "",
+									"description": "NFT ID",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Price Requested (wei)",
+									"type": "default"
+								},
+								{
+									"key": "private_key",
+									"value": "",
+									"description": "Private Key of Owner of NFT",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/publish_offer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"publish_offer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Offer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID generate on Publish Offer, query on http://localhost:8000/api/bids/",
+									"type": "default"
+								},
+								{
+									"key": "private_key",
+									"value": "",
+									"description": "Private Key of Bidder",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/accept_offer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accept_offer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Finish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id\n",
+							"value": "",
+							"description": "ID generate on Publish action, query on http://localhost:8000/api/bids/",
+							"type": "default"
+						},
+						{
+							"key": "private_key",
+							"value": "",
+							"description": "Private key of owner",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/finish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"finish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finish Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id\n",
+							"value": "4",
+							"type": "default"
+						},
+						{
+							"key": "private_key",
+							"value": "8f2a395a2bad0f9af0562009c832b07b851cda1923b0fb524834de35ac4f3742",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/finish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"finish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase ERC20",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "",
+							"description": "Amount of Token ERC20 to purchase",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "",
+							"description": "Target address of tokens",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/erc20-purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"erc20-purchase"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

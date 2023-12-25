@@ -1,0 +1,3 @@
+hasher_abi = [
+    {"inputs": [{"components": [{"internalType": "address","name": "collectionAddress","type": "address"},{"internalType": "address","name": "erc20Address","type": "address"},{"internalType": "uint256","name": "tokenId","type": "uint256"},{"internalType": "uint256","name": "bid","type": "uint256"}],"internalType": "struct Hasher.AuctionData","name": "auctionData","type": "tuple"}],"name": "hash","outputs": [{"internalType": "bytes32","name": "","type": "bytes32"}],"stateMutability": "pure","type": "function"}
+]
